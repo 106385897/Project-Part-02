@@ -21,10 +21,10 @@
 
      <nav aria-label="Main Navigation">
         <ul class="nav-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="jobs.html">Job Opportunities</a></li>
-            <li><a href="apply.html">Apply Now</a></li>
-            <li><a href="about.html" class="active">About Our Team</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="jobs.php">Job Opportunities</a></li>
+            <li><a href="apply.php">Apply Now</a></li>
+            <li><a href="about.php" class="active">About Our Team</a></li>
         </ul>
     </nav>
 

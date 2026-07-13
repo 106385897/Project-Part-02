@@ -35,10 +35,10 @@
 
     <nav aria-label="Main Navigation">
         <ul class="nav-menu">
-            <li><a href="index.html" class="active" aria-current="page">Home</a></li>
-            <li><a href="jobs.html">Job Opportunities</a></li>
-            <li><a href="apply.html">Apply Now</a></li>
-            <li><a href="about.html">About Our Team</a></li>
+            <li><a href="index.php" class="active" aria-current="page">Home</a></li>
+            <li><a href="jobs.php">Job Opportunities</a></li>
+            <li><a href="apply.php">Apply Now</a></li>
+            <li><a href="about.php">About Our Team</a></li>
         </ul>
     </nav>
 
