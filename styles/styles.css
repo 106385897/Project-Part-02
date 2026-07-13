@@ -1,0 +1,938 @@
+/**Maliki/ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #f4f7f6;
+}
+
+h1, h2, h3, h4 {
+    margin-bottom: 15px;
+    color: #081935; 
+}
+
+#main-header {
+    background-color: #ffffff; 
+    color: #081935;
+    padding: 15px 0;
+    border-bottom: 4px solid #b58e42; 
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    max-width: 220px; 
+    height: auto;
+    margin-right: 30px;
+}
+
+.title-group {
+    border-left: 2px solid #eeeeee;
+    padding-left: 30px;
+}
+
+.title-group h1 {
+    color: #081935; 
+    margin-bottom: 5px;
+    font-size: 2.4rem;
+}
+
+.title-group h2 {
+    color: #b58e42; 
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+nav {
+    background-color: #081935; 
+}
+
+.nav-menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-menu li a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 25px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a:focus {
+    background-color: #b58e42; 
+    color: #ffffff;
+    outline: none; 
+}
+
+.nav-menu li a:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: -3px;
+}
+
+.nav-menu li a.active {
+    background-color: #0a2044; 
+    border-bottom: 4px solid #b58e42; 
+}
+
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.content-section {
+    padding: 30px 20px;
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(8, 25, 53, 0), rgba(8, 25, 53, 0.2), rgba(8, 25, 53, 0));
+    margin: 20px 0;
+}
+
+.content-section ul {
+    list-style-type: disc;
+    color: #081935;
+    padding-left: 25px;
+}
+
+.content-section ul ul {
+    list-style-type: disc;
+    margin-top: 5px;
+}
+
+.content-section ul li::marker,
+.content-section ul ul li::marker {
+    color: #081935;
+}
+
+
+#hero-section {
+    background-image: linear-gradient(135deg, rgba(8, 25, 53, 0.9) 0%, rgba(181, 142, 66, 0.8) 100%), 
+                      url('https://placehold.co/1200x400/eeeeee/ccc?text=Digital+Network+Background');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    padding: 80px 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+#hero-section h3 {
+    color: #ffffff;
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+#hero-section p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.main-image-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+figcaption {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #666;
+}
+
+
+.focus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.focus-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid #b58e42;
+    transition: transform 0.3s ease;
+}
+
+.focus-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+.split-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.benefits {
+    flex: 1;
+    min-width: 300px;
+}
+
+.benefits-list {
+    list-style-type: square;
+    padding-left: 20px;
+    color: #081935;
+}
+
+.benefits-list li {
+    margin-bottom: 10px;
+}
+
+.testimonial {
+    flex: 1;
+    min-width: 300px;
+    background-color: #fcf9f2; 
+    padding: 25px;
+    border-radius: 8px;
+    position: relative;
+    border: 1px solid #e8dec7;
+}
+
+blockquote {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+cite {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #081935; 
+    font-style: normal;
+}
+
+
+footer {
+    background-color: #081935; 
+    color: #ffffff;
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 40px;
+    border-top: 4px solid #b58e42; 
+}
+
+.footer-links {
+    list-style: none;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.footer-links a {
+    color: #b58e42; 
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .logo {
+        margin-right: 0;
+        margin-bottom: 15px;
+        max-width: 180px;
+    }
+    .title-group {
+        border-left: none;
+        padding-left: 0;
+    }
+    .nav-menu {
+        flex-direction: column;
+    }
+    .nav-menu li a {
+        text-align: center;
+        border-bottom: 1px solid #1a3461;
+    }
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+/*Khaled-Index page */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #f4f7f6;
+}
+
+h1, h2, h3, h4 {
+    margin-bottom: 15px;
+    color: #081935; 
+}
+
+
+#main-header {
+    background-color: #ffffff; 
+    color: #081935;
+    padding: 15px 0;
+    border-bottom: 4px solid #b58e42; 
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    max-width: 220px; 
+    height: auto;
+    margin-right: 30px;
+}
+
+.title-group {
+    border-left: 2px solid #eeeeee;
+    padding-left: 30px;
+}
+
+.title-group h1 {
+    color: #081935; 
+    margin-bottom: 5px;
+    font-size: 2.4rem;
+}
+
+.title-group h2 {
+    color: #b58e42; 
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+nav {
+    background-color: #081935; 
+}
+
+.nav-menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-menu li a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 25px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a:focus {
+    background-color: #b58e42; 
+    color: #ffffff;
+    outline: none; 
+}
+
+.nav-menu li a:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: -3px;
+}
+
+.nav-menu li a.active {
+    background-color: #0a2044; 
+    border-bottom: 4px solid #b58e42; 
+}
+
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.content-section {
+    padding: 30px 20px;
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(8, 25, 53, 0), rgba(8, 25, 53, 0.2), rgba(8, 25, 53, 0));
+    margin: 20px 0;
+}
+
+#hero-section {
+    background-image: linear-gradient(135deg, rgba(8, 25, 53, 0.9) 0%, rgba(181, 142, 66, 0.8) 100%), 
+                      url('https://placehold.co/1200x400/eeeeee/ccc?text=Digital+Network+Background');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    padding: 80px 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+#hero-section h3 {
+    color: #ffffff;
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+#hero-section p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.main-image-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+figcaption {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #666;
+}
+
+
+.focus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.focus-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid #b58e42; 
+    transition: transform 0.3s ease;
+}
+
+.focus-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+.split-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.benefits {
+    flex: 1;
+    min-width: 300px;
+}
+
+.benefits-list {
+    list-style-type: square;
+    padding-left: 20px;
+    color: #081935;
+}
+
+.benefits-list li {
+    margin-bottom: 10px;
+}
+
+.testimonial {
+    flex: 1;
+    min-width: 300px;
+    background-color: #fcf9f2;
+    padding: 25px;
+    border-radius: 8px;
+    position: relative;
+    border: 1px solid #e8dec7;
+}
+
+blockquote {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+cite {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #081935; 
+    font-style: normal;
+}
+
+
+footer {
+    background-color: #081935; 
+    color: #ffffff;
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 40px;
+    border-top: 4px solid #b58e42; 
+}
+
+.footer-links {
+    list-style: none;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.footer-links a {
+    color: #b58e42; 
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+
+@media screen and (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .logo {
+        margin-right: 0;
+        margin-bottom: 15px;
+        max-width: 180px;
+    }
+    .title-group {
+        border-left: none;
+        padding-left: 0;
+    }
+    .nav-menu {
+        flex-direction: column;
+    }
+    .nav-menu li a {
+        text-align: center;
+        border-bottom: 1px solid #1a3461;
+    }
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+
+/*Nahan-Apply Page*/
+.logo {
+    width: 180px;
+    height: auto;
+}
+
+#main-header {
+    background: white;
+    padding: 20px 40px;
+    border-bottom: 3px solid #b58e42;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+}
+
+.title-group {
+    margin-left: 30px;
+}
+
+.title-group h1 {
+    color: #081935;
+    margin-bottom: 8px;
+}
+
+.title-group h2 {
+    color: #b58e42;
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.title-group p {
+    color: #666;
+    font-style: italic;
+}
+nav {
+    background: #081935;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 1200px;
+}
+
+.nav-menu li {
+    margin: 0;
+}
+
+.nav-menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    background: #b58e42;
+}
+
+.application-form{
+    width:80%;
+    max-width:900px;
+    margin:40px auto;
+    padding:30px;
+    background:#fff;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.application-form h2{
+    text-align:center;
+    color:#081935;
+    margin-bottom:30px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.full-width{
+    grid-column:1 / 3;
+}
+
+.application-form label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+    color:#081935;
+}
+
+.required::after{
+    content:" *";
+    color:#b58e42;
+}
+
+.hint{
+    display:block;
+    margin-top:6px;
+    font-size:0.85rem;
+    font-weight:normal;
+    color:#666;
+}
+
+.form-section-title{
+    grid-column:1 / 3;
+    color:#081935;
+    font-size:1.1rem;
+    margin-top:15px;
+    padding-bottom:8px;
+    border-bottom:1px solid #eeeeee;
+}
+
+.form-section-title:first-of-type{
+    margin-top:0;
+}
+
+.application-form input,
+.application-form select,
+.application-form textarea{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    box-sizing:border-box;
+}
+
+.application-form input:focus,
+.application-form select:focus,
+.application-form textarea:focus{
+    outline:none;
+    border:2px solid #b58e42;
+}
+
+.application-form input:user-invalid,
+.application-form select:user-invalid{
+    border-color:#b23a48;
+    background-color:#fbebec;
+}
+
+.application-form textarea{
+    height:120px;
+    resize:vertical;
+}
+
+.application-form fieldset{
+    border:1px solid #b58e42;
+    padding:15px;
+    border-radius:5px;
+}
+
+.application-form legend{
+    color:#081935;
+    font-weight:bold;
+}
+
+.application-form fieldset label{
+    display:inline-block;
+    margin-right:20px;
+    font-weight:normal;
+}
+
+.file-upload{
+    border:1px dashed #ccc;
+    padding:12px;
+    border-radius:5px;
+    background:#f9f9f9;
+}
+
+.declaration{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    background:#f8f8f8;
+    padding:15px;
+    border:1px solid #eeeeee;
+    border-radius:5px;
+}
+
+.declaration input{
+    width:auto;
+    margin-top:4px;
+}
+
+.declaration label{
+    font-weight:normal;
+    margin-bottom:0;
+    color:#333333;
+}
+
+.form-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:30px;
+}
+
+.form-buttons input{
+    padding:12px 30px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.form-buttons input[type="submit"]{
+    background:#081935;
+    color:white;
+}
+
+.form-buttons input[type="submit"]:hover{
+    background:#b58e42;
+}
+
+.form-buttons input[type="reset"]{
+    background:#cccccc;
+}
+
+.form-buttons input[type="reset"]:hover{
+    background:#aaaaaa;
+}
+
+@media screen and (max-width:768px){
+
+.form-grid{
+    grid-template-columns:1fr;
+}
+
+.full-width{
+    grid-column:1;
+}
+
+.form-section-title{
+    grid-column:1;
+}
+
+.form-buttons{
+    flex-direction:column;
+}
+
+.form-buttons input{
+    width:100%;
+}
+}
+
+
+/*Job Page -Khaled*/
+
+.job-card{
+
+margin-bottom:35px;
+
+padding:25px;
+
+background:white;
+
+border:1px solid #cccccc;
+
+border-left:6px solid #b58e42;
+
+border-radius:8px;
+
+}
+
+.job-card h2{
+
+color:#081935;
+
+margin-bottom:10px;
+
+}
+
+.job-card h3{
+
+color:#b58e42;
+
+margin-top:20px;
+
+}
+
+.job-card p{
+
+margin-bottom:12px;
+
+line-height:1.6;
+
+}
+
+.job-card ul,
+.job-card ol{
+
+margin-left:25px;
+
+margin-bottom:15px;
+
+}
+
+aside{
+
+width:25%;
+
+float:right;
+
+padding:20px;
+
+margin-left:20px;
+
+margin-bottom:20px;
+
+border:2px solid #b58e42;
+
+border-radius:8px;
+
+background:#f8f8f8;
+
+}
+
+aside h3{
+
+color:#081935;
+
+margin-bottom:15px;
+
+}
+
+aside ul{
+
+margin-left:20px;
+
+}
+
+@media screen and (max-width:768px){
+
+aside{
+
+float:none;
+
+width:100%;
+
+margin:20px 0;
+
+}
+
+}
