@@ -127,54 +127,105 @@ if (isset($_FILES["resume"]) && $_FILES["resume"]["error"] == 0) {
     }
 }
 
-// Display validation errors
-if (!empty($errors)) {
+// Insert into database only if no errors
+$eoiNumber = null;
+$dbError = "";
 
-    echo "<h2>Validation Errors</h2>";
-    echo "<ul>";
+if (empty($errors)) {
 
-    foreach ($errors as $error) {
-        echo "<li>$error</li>";
+    $sql = "INSERT INTO eoi
+    (jobref, fname, lname, dob, gender, address, state, postcode, email, phone, skills, otherskills, resume)
+    VALUES
+    ('$jobref',
+    '$fname',
+    '$lname',
+    '$dob',
+    '$gender',
+    '$address',
+    '$state',
+    '$postcode',
+    '$email',
+    '$phone',
+    '$skills',
+    '$otherskills',
+    '$resumeName')";
+
+    if (mysqli_query($conn, $sql)) {
+        $eoiNumber = mysqli_insert_id($conn);
+    } else {
+        $dbError = mysqli_error($conn);
     }
-
-    echo "</ul>";
-    echo "<p><a href='apply.php'>Return to Application Form</a></p>";
-
-    mysqli_close($conn);
-    exit();
-}
-
-// Insert into database
-$sql = "INSERT INTO eoi
-(jobref, fname, lname, dob, gender, address, state, postcode, email, phone, skills, otherskills, resume)
-VALUES
-('$jobref',
-'$fname',
-'$lname',
-'$dob',
-'$gender',
-'$address',
-'$state',
-'$postcode',
-'$email',
-'$phone',
-'$skills',
-'$otherskills',
-'$resumeName')";
-
-if (mysqli_query($conn, $sql)) {
-
-    $eoiNumber = mysqli_insert_id($conn);
-
-    echo "<h1>Application Submitted Successfully</h1>";
-    echo "<p>Your EOI Number is <strong>$eoiNumber</strong></p>";
-
-} else {
-
-    echo "<h2>Error</h2>";
-    echo mysqli_error($conn);
-
 }
 
 mysqli_close($conn);
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Status</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+    <header>
+           <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+            <li><a href="index.php">Home</a></li>
+            <li><a href="jobs.php">Job Opportunities</a></li>
+            <li><a href="apply.php">Apply Now</a></li>
+            <li><a href="about.php">About Our Team</a></li>
+            <li><a href="login.php">Login</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <main>
+        <?php if (!empty($errors)) : ?>
+
+            <div class="status-container status-error">
+                <h2>Validation Errors</h2>
+                <ul class="error-list">
+                    <?php foreach ($errors as $error) : ?>
+                        <li><?php echo $error; ?></li>
+                    <?php endforeach; ?>
+                </ul>
+                <p class="status-action"><a href="apply.php">Return to Application Form</a></p>
+            </div>
+
+        <?php elseif ($dbError !== "") : ?>
+
+            <div class="status-container status-error">
+                <h2>Something Went Wrong</h2>
+                <p><?php echo $dbError; ?></p>
+                <p class="status-action"><a href="apply.php">Return to Application Form</a></p>
+            </div>
+
+        <?php else : ?>
+
+            <div class="status-container status-success">
+                <h1>Application Submitted Successfully</h1>
+                <p>Your EOI Number is <strong class="eoi-number"><?php echo $eoiNumber; ?></strong></p>
+                <p class="status-note">Please keep this number for your records — you'll need it if you contact us about your application.</p>
+                <p class="status-action"><a href="index.php">Return to Home</a></p>
+            </div>
+
+        <?php endif; ?>
+    </main>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2026 Lumina University. All rights reserved.</p>
+        <ul class="footer-links">
+            <li><a href="mailto:info@luminauniversity.com">Contact Us: info@luminauniversity.com</a></li>
+            <li><a href="https://nahanparvinnavas.atlassian.net/jira/software/projects/PT1/summary" target="_blank" rel="noopener noreferrer">Project Jira Board</a></li>
+            <li><a href="https://github.com/106385897/Project-Part-02.git" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+            <li><a href="https://106385897.github.io/Project-Part-1/" target="_blank" rel="noopener noreferrer">Project Website</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+</body>
+</html>

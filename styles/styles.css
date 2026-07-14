@@ -936,3 +936,605 @@ margin:20px 0;
 }
 
 }
+
+/*Login Page - Khaled*/
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    padding: 40px 35px;
+    border-radius: 10px;
+    border-top: 4px solid #b58e42;
+    box-shadow: 0 8px 24px rgba(8, 25, 53, 0.12);
+    margin: 60px auto;
+    animation: loginFadeIn 0.4s ease;
+}
+
+@keyframes loginFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-container h2 {
+    text-align: center;
+    color: #081935;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.login-container h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #b58e42;
+    border-radius: 2px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #081935;
+    font-size: 0.95rem;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 22px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus {
+    outline: none;
+    border-color: #b58e42;
+    box-shadow: 0 0 0 3px rgba(181, 142, 66, 0.2);
+}
+
+.login-form input[type="text"]:user-invalid,
+.login-form input[type="password"]:user-invalid {
+    border-color: #b23a48;
+    background-color: #fbebec;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: #081935;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+.login-form button:hover {
+    background-color: #b58e42;
+}
+
+.login-form button:active {
+    transform: scale(0.98);
+}
+
+@media screen and (max-width: 480px) {
+    .login-container {
+        padding: 30px 22px;
+        margin: 20px auto;
+    }
+}
+
+
+/*application status page*/
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    padding: 40px 35px;
+    border-radius: 10px;
+    border-top: 4px solid #b58e42;
+    box-shadow: 0 8px 24px rgba(8, 25, 53, 0.12);
+    margin: 60px auto;
+    animation: loginFadeIn 0.4s ease;
+}
+
+@keyframes loginFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-container h2 {
+    text-align: center;
+    color: #081935;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.login-container h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #b58e42;
+    border-radius: 2px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #081935;
+    font-size: 0.95rem;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 22px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus {
+    outline: none;
+    border-color: #b58e42;
+    box-shadow: 0 0 0 3px rgba(181, 142, 66, 0.2);
+}
+
+.login-form input[type="text"]:user-invalid,
+.login-form input[type="password"]:user-invalid {
+    border-color: #b23a48;
+    background-color: #fbebec;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: #081935;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+.login-form button:hover {
+    background-color: #b58e42;
+}
+
+.login-form button:active {
+    transform: scale(0.98);
+}
+
+@media screen and (max-width: 480px) {
+    .login-container {
+        padding: 30px 22px;
+        margin: 20px auto;
+    }
+}
+
+/*application status page*/
+
+.status-container {
+    max-width: 600px;
+    margin: 60px auto;
+    background: #ffffff;
+    padding: 40px 35px;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(8, 25, 53, 0.12);
+    text-align: center;
+    animation: loginFadeIn 0.4s ease;
+}
+
+.status-success {
+    border-top: 4px solid #b58e42;
+}
+
+.status-success h1 {
+    color: #081935;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.eoi-number {
+    display: inline-block;
+    color: #ffffff;
+    background-color: #081935;
+    padding: 4px 14px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+
+.status-note {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.status-error {
+    border-top: 4px solid #b23a48;
+    text-align: left;
+}
+
+.status-error h2 {
+    color: #b23a48;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.error-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #333333;
+}
+
+.error-list li {
+    margin-bottom: 8px;
+}
+
+.status-action {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.status-action a {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: #081935;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.25s ease;
+}
+
+.status-action a:hover {
+    background-color: #b58e42;
+}
+
+@media screen and (max-width: 480px) {
+    .status-container {
+        padding: 30px 22px;
+        margin: 30px auto;
+    }
+}
+
+
+
+/* ================================
+   Login Page Additions - HR Login
+   Add this AFTER your existing CSS in styles/styles.css.
+   Matches your actual login.php markup:
+   <main>
+     <div class="login-container">
+       <h2>HR Manager Login</h2>
+       <form class="login-form">
+         <label>...</label>
+         <input>
+         ...
+         <button>Log In</button>
+       </form>
+     </div>
+   </main>
+   ================================ */
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    padding: 40px 35px;
+    border-radius: 10px;
+    border-top: 4px solid #b58e42;
+    box-shadow: 0 8px 24px rgba(8, 25, 53, 0.12);
+    margin: 60px auto;
+    animation: loginFadeIn 0.4s ease;
+}
+
+@keyframes loginFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-container h2 {
+    text-align: center;
+    color: #081935;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.login-container h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #b58e42;
+    border-radius: 2px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #081935;
+    font-size: 0.95rem;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 22px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus {
+    outline: none;
+    border-color: #b58e42;
+    box-shadow: 0 0 0 3px rgba(181, 142, 66, 0.2);
+}
+
+.login-form input[type="text"]:user-invalid,
+.login-form input[type="password"]:user-invalid {
+    border-color: #b23a48;
+    background-color: #fbebec;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: #081935;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+.login-form button:hover {
+    background-color: #b58e42;
+}
+
+.login-form button:active {
+    transform: scale(0.98);
+}
+
+@media screen and (max-width: 480px) {
+    .login-container {
+        padding: 30px 22px;
+        margin: 20px auto;
+    }
+}
+
+/* ================================
+   Application Status Page (process_eoi.php)
+   ================================ */
+
+.status-container {
+    max-width: 600px;
+    margin: 60px auto;
+    background: #ffffff;
+    padding: 40px 35px;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(8, 25, 53, 0.12);
+    text-align: center;
+    animation: loginFadeIn 0.4s ease;
+}
+
+.status-success {
+    border-top: 4px solid #b58e42;
+}
+
+.status-success h1 {
+    color: #081935;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.eoi-number {
+    display: inline-block;
+    color: #ffffff;
+    background-color: #081935;
+    padding: 4px 14px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+
+.status-note {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.status-error {
+    border-top: 4px solid #b23a48;
+    text-align: left;
+}
+
+.status-error h2 {
+    color: #b23a48;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.error-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #333333;
+}
+
+.error-list li {
+    margin-bottom: 8px;
+}
+
+.status-action {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.status-action a {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: #081935;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.25s ease;
+}
+
+.status-action a:hover {
+    background-color: #b58e42;
+}
+
+@media screen and (max-width: 480px) {
+    .status-container {
+        padding: 30px 22px;
+        margin: 30px auto;
+    }
+}
+
+/* ================================
+   Project Contributions Table (about.php)
+   ================================ */
+
+.contributions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    box-shadow: 0 2px 8px rgba(8, 25, 53, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.contributions-table thead tr {
+    background-color: #081935;
+    color: #ffffff;
+}
+
+.contributions-table th,
+.contributions-table td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid #eeeeee;
+    vertical-align: top;
+}
+
+.contributions-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.contributions-table tbody tr:hover {
+    background-color: #fcf5e8;
+}
+
+.contrib-name {
+    font-weight: bold;
+    color: #081935;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+    .contributions-table,
+    .contributions-table thead,
+    .contributions-table tbody,
+    .contributions-table th,
+    .contributions-table td,
+    .contributions-table tr {
+        display: block;
+    }
+
+    .contributions-table thead {
+        display: none;
+    }
+
+    .contributions-table tr {
+        margin-bottom: 15px;
+        border: 1px solid #eeeeee;
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    .contributions-table td {
+        border-bottom: none;
+        padding: 8px 10px;
+    }
+
+    .contributions-table td::before {
+        content: attr(data-label);
+        display: block;
+        font-weight: bold;
+        color: #b58e42;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+    }
+}

@@ -1,3 +1,64 @@
+<?php
+require_once("settings.php");
+
+$conn = mysqli_connect($host, $user, $pwd, $sql_db);
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Create the contributions table if it doesn't exist
+$table = "CREATE TABLE IF NOT EXISTS contributions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    member_name VARCHAR(50) NOT NULL,
+    project_name VARCHAR(20) NOT NULL,
+    contribution TEXT NOT NULL
+)";
+
+mysqli_query($conn, $table);
+
+// Seed the table once, only if it's empty
+$check = mysqli_query($conn, "SELECT COUNT(*) AS total FROM contributions");
+$row = mysqli_fetch_assoc($check);
+
+if ($row['total'] == 0) {
+
+    $seedData = [
+        ["Khaled", "Project 1", "Built the Home page and wrote the CSS styling for the Home and Jobs pages."],
+        ["Khaled", "Project 2", "Configured the database settings (Task 2), secured the HR Manager login system (Task 6), and created this Contributions table with dynamic data loading on the About page (Task 7)."],
+        ["Nahan", "Project 1", "Built the Apply Now page and its CSS styling, and collaborated on the Jobs page HTML."],
+        ["Nahan", "Project 2", "Created the Expression of Interest (EOI) database table (Task 3) and implemented validated record processing via process_eoi.php (Task 4)."],
+        ["Mohammed Malki", "Project 1", "Built the About Us page and its CSS styling, and collaborated on the Jobs page HTML."],
+        ["Mohammed Malki", "Project 2", "Reused common UI elements with PHP includes (Task 1) and built the dynamic Jobs table and jobs.php page (Task 5)."],
+    ];
+
+    $insertStmt = mysqli_prepare($conn, "INSERT INTO contributions (member_name, project_name, contribution) VALUES (?, ?, ?)");
+
+    foreach ($seedData as $entry) {
+        mysqli_stmt_bind_param($insertStmt, "sss", $entry[0], $entry[1], $entry[2]);
+        mysqli_stmt_execute($insertStmt);
+    }
+
+    mysqli_stmt_close($insertStmt);
+}
+
+// Load all contributions, grouped by member
+$contributions = [];
+
+$result = mysqli_query($conn, "SELECT member_name, project_name, contribution FROM contributions ORDER BY member_name, project_name");
+
+while ($row = mysqli_fetch_assoc($result)) {
+    $name = $row['member_name'];
+
+    if (!isset($contributions[$name])) {
+        $contributions[$name] = [];
+    }
+
+    $contributions[$name][$row['project_name']] = $row['contribution'];
+}
+
+mysqli_close($conn);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,6 +86,7 @@
             <li><a href="jobs.php">Job Opportunities</a></li>
             <li><a href="apply.php">Apply Now</a></li>
             <li><a href="about.php" class="active">About Our Team</a></li>
+            <li><a href="login.php">Login</a></li>
         </ul>
     </nav>
 
@@ -72,6 +134,32 @@
                 <dd>Style & UX Lead: Developed the CSS styles, chose the color palettes, and guaranteed responsive layouts. <em>"Great design is invisible."</em></dd>
                 <dd>Favorite Language: CSS3 (Cascading Style Sheets)</dd>
             </dl>
+        </section>
+
+        <hr class="section-divider">
+
+        <section>
+            <h3>Project Contributions</h3>
+            <p style="margin-bottom: 15px; color: #555;">Loaded live from the database — a breakdown of what each member completed across Project 1 and Project 2.</p>
+
+            <table class="contributions-table">
+                <thead>
+                    <tr>
+                        <th>Developer</th>
+                        <th>Project 1</th>
+                        <th>Project 2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($contributions as $memberName => $projects) : ?>
+                        <tr>
+                            <td class="contrib-name" data-label="Developer"><?php echo htmlspecialchars($memberName); ?></td>
+                            <td data-label="Project 1"><?php echo htmlspecialchars($projects['Project 1'] ?? '—'); ?></td>
+                            <td data-label="Project 2"><?php echo htmlspecialchars($projects['Project 2'] ?? '—'); ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
         </section>
 
         <hr class="section-divider">
@@ -128,7 +216,7 @@
         <ul class="footer-links">
             <li><a href="mailto:info@luminauniversity.com">Contact Us: info@luminauniversity.com</a></li>
             <li><a href="https://nahanparvinnavas.atlassian.net/jira/software/projects/PT1/summary" target="_blank" rel="noopener noreferrer">Project Jira Board</a></li>
-            <li><a href="https://github.com/106385897/Project-Part-1.git" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+            <li><a href="https://github.com/106385897/Project-Part-02.git" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
             <li><a href="https://106385897.github.io/Project-Part-1/" target="_blank" rel="noopener noreferrer">Project Website</a></li>
         </ul>
     </div>
