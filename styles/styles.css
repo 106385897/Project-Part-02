@@ -1248,22 +1248,7 @@ margin:20px 0;
 
 
 
-/* ================================
-   Login Page Additions - HR Login
-   Add this AFTER your existing CSS in styles/styles.css.
-   Matches your actual login.php markup:
-   <main>
-     <div class="login-container">
-       <h2>HR Manager Login</h2>
-       <form class="login-form">
-         <label>...</label>
-         <input>
-         ...
-         <button>Log In</button>
-       </form>
-     </div>
-   </main>
-   ================================ */
+/*login Page*/
 
 .login-container {
     width: 100%;
@@ -1374,9 +1359,7 @@ margin:20px 0;
     }
 }
 
-/* ================================
-   Application Status Page (process_eoi.php)
-   ================================ */
+/*application status page*/
 
 .status-container {
     max-width: 600px;
@@ -1462,9 +1445,7 @@ margin:20px 0;
     }
 }
 
-/* ================================
-   Project Contributions Table (about.php)
-   ================================ */
+/*contributions page*/
 
 .contributions-table {
     width: 100%;
@@ -1529,6 +1510,573 @@ margin:20px 0;
     }
 
     .contributions-table td::before {
+        content: attr(data-label);
+        display: block;
+        font-weight: bold;
+        color: #b58e42;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+    }
+}
+
+/*login Page*/
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    padding: 40px 35px;
+    border-radius: 10px;
+    border-top: 4px solid #b58e42;
+    box-shadow: 0 8px 24px rgba(8, 25, 53, 0.12);
+    margin: 60px auto;
+    animation: loginFadeIn 0.4s ease;
+}
+
+@keyframes loginFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-container h2 {
+    text-align: center;
+    color: #081935;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.login-container h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #b58e42;
+    border-radius: 2px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #081935;
+    font-size: 0.95rem;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 22px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus {
+    outline: none;
+    border-color: #b58e42;
+    box-shadow: 0 0 0 3px rgba(181, 142, 66, 0.2);
+}
+
+.login-form input[type="text"]:user-invalid,
+.login-form input[type="password"]:user-invalid {
+    border-color: #b23a48;
+    background-color: #fbebec;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: #081935;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+.login-form button:hover {
+    background-color: #b58e42;
+}
+
+.login-form button:active {
+    transform: scale(0.98);
+}
+
+@media screen and (max-width: 480px) {
+    .login-container {
+        padding: 30px 22px;
+        margin: 20px auto;
+    }
+}
+
+/*application status page*/
+
+.status-container {
+    max-width: 600px;
+    margin: 60px auto;
+    background: #ffffff;
+    padding: 40px 35px;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(8, 25, 53, 0.12);
+    text-align: center;
+    animation: loginFadeIn 0.4s ease;
+}
+
+.status-success {
+    border-top: 4px solid #b58e42;
+}
+
+.status-success h1 {
+    color: #081935;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.eoi-number {
+    display: inline-block;
+    color: #ffffff;
+    background-color: #081935;
+    padding: 4px 14px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+
+.status-note {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.status-error {
+    border-top: 4px solid #b23a48;
+    text-align: left;
+}
+
+.status-error h2 {
+    color: #b23a48;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.error-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #333333;
+}
+
+.error-list li {
+    margin-bottom: 8px;
+}
+
+.status-action {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.status-action a {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: #081935;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.25s ease;
+}
+
+.status-action a:hover {
+    background-color: #b58e42;
+}
+
+@media screen and (max-width: 480px) {
+    .status-container {
+        padding: 30px 22px;
+        margin: 30px auto;
+    }
+}
+
+/*project contributions table*/
+
+.contributions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    box-shadow: 0 2px 8px rgba(8, 25, 53, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.contributions-table thead tr {
+    background-color: #081935;
+    color: #ffffff;
+}
+
+.contributions-table th,
+.contributions-table td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid #eeeeee;
+    vertical-align: top;
+}
+
+.contributions-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.contributions-table tbody tr:hover {
+    background-color: #fcf5e8;
+}
+
+.contrib-name {
+    font-weight: bold;
+    color: #081935;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+    .contributions-table,
+    .contributions-table thead,
+    .contributions-table tbody,
+    .contributions-table th,
+    .contributions-table td,
+    .contributions-table tr {
+        display: block;
+    }
+
+    .contributions-table thead {
+        display: none;
+    }
+
+    .contributions-table tr {
+        margin-bottom: 15px;
+        border: 1px solid #eeeeee;
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    .contributions-table td {
+        border-bottom: none;
+        padding: 8px 10px;
+    }
+
+    .contributions-table td::before {
+        content: attr(data-label);
+        display: block;
+        font-weight: bold;
+        color: #b58e42;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+    }
+}
+
+/*dashboard page*/
+
+.dashboard-topbar {
+    background-color: #081935;
+    color: #ffffff;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-bottom: 4px solid #b58e42;
+}
+
+.dashboard-topbar h1 {
+    color: #ffffff;
+    margin-bottom: 0;
+    font-size: 1.6rem;
+}
+
+.dashboard-user {
+    font-size: 0.95rem;
+}
+
+.logout-link {
+    margin-left: 15px;
+    color: #b58e42;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 6px 14px;
+    border: 1px solid #b58e42;
+    border-radius: 5px;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.logout-link:hover {
+    background-color: #b58e42;
+    color: #ffffff;
+}
+
+.dashboard-main {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px 40px;
+}
+
+.dashboard-msg {
+    background-color: #eef7ee;
+    border: 1px solid #4a8c4a;
+    color: #2f6b2f;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.dashboard-panel {
+    background-color: #ffffff;
+    border: 1px solid #eeeeee;
+    border-left: 5px solid #b58e42;
+    border-radius: 8px;
+    padding: 20px 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(8, 25, 53, 0.06);
+}
+
+.dashboard-panel h3 {
+    color: #081935;
+    margin-bottom: 15px;
+}
+
+.dashboard-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.dashboard-form-inline {
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-field label,
+.dashboard-form-inline label {
+    font-weight: bold;
+    color: #081935;
+    font-size: 0.9rem;
+}
+
+.dashboard-form input[type="text"],
+.dashboard-form input[type="number"],
+.dashboard-form select {
+    padding: 9px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.95rem;
+}
+
+.dashboard-form input:focus,
+.dashboard-form select:focus {
+    outline: none;
+    border-color: #b58e42;
+    box-shadow: 0 0 0 3px rgba(181, 142, 66, 0.2);
+}
+
+.input-small {
+    width: 90px;
+}
+
+.form-field-buttons {
+    flex-direction: row;
+    gap: 10px;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-danger {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.25s ease;
+}
+
+.btn-primary {
+    background-color: #081935;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #b58e42;
+}
+
+.btn-secondary {
+    background-color: #e0e0e0;
+    color: #333333;
+}
+
+.btn-secondary:hover {
+    background-color: #cccccc;
+}
+
+.btn-danger {
+    background-color: #b23a48;
+    color: #ffffff;
+}
+
+.btn-danger:hover {
+    background-color: #8f2e39;
+}
+
+.dashboard-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.sort-links {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.sort-links a {
+    color: #081935;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sort-links a:hover {
+    color: #b58e42;
+    text-decoration: underline;
+}
+
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.dashboard-table thead tr {
+    background-color: #081935;
+    color: #ffffff;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.dashboard-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.dashboard-table tbody tr:hover {
+    background-color: #fcf5e8;
+}
+
+.no-records {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    padding: 20px;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.status-new {
+    background-color: #e3e9f5;
+    color: #2c4a91;
+}
+
+.status-current {
+    background-color: #fcefd6;
+    color: #9c6d0e;
+}
+
+.status-final {
+    background-color: #e2f2e2;
+    color: #2f6b2f;
+}
+
+@media screen and (max-width: 768px) {
+    .dashboard-topbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .dashboard-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .dashboard-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .dashboard-form-inline {
+        flex-wrap: wrap;
+    }
+
+    .dashboard-table,
+    .dashboard-table thead,
+    .dashboard-table tbody,
+    .dashboard-table th,
+    .dashboard-table td,
+    .dashboard-table tr {
+        display: block;
+    }
+
+    .dashboard-table thead {
+        display: none;
+    }
+
+    .dashboard-table tr {
+        margin-bottom: 15px;
+        border: 1px solid #eeeeee;
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    .dashboard-table td {
+        border-bottom: none;
+        padding: 8px 10px;
+    }
+
+    .dashboard-table td::before {
         content: attr(data-label);
         display: block;
         font-weight: bold;
