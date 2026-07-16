@@ -9,44 +9,9 @@
 </head>
 
 <body>
+    <?php require_once("header.inc"); ?>
+    <?php require_once("nav.inc"); ?>
 
-<header id="main-header">
-    <div class="header-container">
-
-        <img src="images/logo.png"
-             alt="Lumina University Logo"
-             class="logo">
-
-        <div class="title-group">
-
-            <h1>Lumina University</h1>
-
-            <h2>Department of Digital Learning & Research</h2>
-
-            <p><em>"Illuminating the Future of Education through Digital Innovation."</em></p>
-
-        </div>
-
-    </div>
-</header>
-
-<nav>
-
-<ul class="nav-menu">
-
-<li><a href="index.php">Home</a></li>
-
-<li><a href="jobs.php" class="active">Job Opportunities</a></li>
-
-<li><a href="apply.php ">Apply Now</a></li>
-
-<li><a href="about.php">About Our Team</a></li>
-
-<li><a href="login.php">Login</a></li>
-
-</ul>
-
-</nav>
 
 <main>
 
@@ -188,17 +153,7 @@ Maintain university websites and improve online user experience.
 
 </main>
 
-<footer>
-    <div class="footer-content">
-        <p>&copy; 2026 Lumina University. All rights reserved.</p>
-        <ul class="footer-links">
-            <li><a href="mailto:info@luminauniversity.com">Contact Us: info@luminauniversity.com</a></li>
-            <li><a href="https://nahanparvinnavas.atlassian.net/jira/software/projects/PT1/summary" target="_blank" rel="noopener noreferrer">Project Jira Board</a></li>
-            <li><a href="https://github.com/106385897/Project-Part-02.git" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
-            <li><a href="https://106385897.github.io/Project-Part-1/" target="_blank" rel="noopener noreferrer">Project Website</a></li>
-        </ul>
-    </div>
-</footer>
+<?php require_once("footer.inc"); ?>
 
 </body>
 </html>
