@@ -1,7 +1,8 @@
-<<<<<<< HEAD
 <?php
+// Figure out which page we're currently on, e.g. "jobs.php"
 $current_page = basename($_SERVER['PHP_SELF']);
 
+// Map each nav link to its label
 $nav_links = [
     'index.php' => 'Home',
     'jobs.php'  => 'Job Opportunities',
@@ -22,22 +23,4 @@ $nav_links = [
             </li>
         <?php endforeach; ?>
     </ul>
-=======
-<nav>
-
-<ul class="nav-menu">
-
-<li><a href="index.php">Home</a></li>
-
-<li><a href="jobs.php" class="active" >Job Opportunities</a></li>
-
-<li><a href="apply.php ">Apply Now</a></li>
-
-<li><a href="about.php">About Our Team</a></li>
-
-<li><a href="login.php">Login</a></li>
-
-</ul>
-
->>>>>>> 9f9be33a6ad01f94476b4f9d7882c0eba6d35996
 </nav>

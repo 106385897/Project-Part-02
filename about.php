@@ -69,15 +69,10 @@ mysqli_close($conn);
 <body>
 
 
-<<<<<<< HEAD
     <?php require_once("header.inc"); ?>
 
     <?php require_once("nav.inc"); ?>
-=======
-    <?php include 'header.inc'; ?>
 
-    
->>>>>>> 9f9be33a6ad01f94476b4f9d7882c0eba6d35996
 
     <main class="content-section">
         <h2>About Lumina University & Our Team</h2>
@@ -199,11 +194,9 @@ mysqli_close($conn);
         </section>
     </main>
 
-<<<<<<< HEAD
+
    <?php require_once("footer.inc"); ?>
-=======
-  <?php include 'footer.inc'; ?>
->>>>>>> 9f9be33a6ad01f94476b4f9d7882c0eba6d35996
+
 
 </body>
 </html>
