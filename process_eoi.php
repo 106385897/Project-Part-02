@@ -1,8 +1,20 @@
 <?php
 require_once("settings.php");
 
-// Prevent direct access
-if ($_SERVER["REQUEST_METHOD"] != "POST") {
+// Block direct access: require POST method AND the required fields to be present
+$requiredFields = ['jobref', 'fname', 'lname', 'dob', 'gender', 'address', 'state', 'postcode', 'email', 'phone'];
+$isValidPost = ($_SERVER["REQUEST_METHOD"] == "POST");
+
+if ($isValidPost) {
+    foreach ($requiredFields as $field) {
+        if (!isset($_POST[$field]) || trim($_POST[$field]) === "") {
+            $isValidPost = false;
+            break;
+        }
+    }
+}
+
+if (!$isValidPost) {
     header("Location: apply.php");
     exit();
 }
@@ -107,9 +119,7 @@ if (isset($_FILES["resume"]) && $_FILES["resume"]["error"] == 0) {
     }
 
     $resumeName = basename($_FILES["resume"]["name"]);
-
     $targetFile = $uploadDir . $resumeName;
-
     $extension = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 
     $allowed = array("pdf", "doc", "docx");
@@ -133,28 +143,25 @@ $dbError = "";
 
 if (empty($errors)) {
 
-    $sql = "INSERT INTO eoi
-    (jobref, fname, lname, dob, gender, address, state, postcode, email, phone, skills, otherskills, resume)
-    VALUES
-    ('$jobref',
-    '$fname',
-    '$lname',
-    '$dob',
-    '$gender',
-    '$address',
-    '$state',
-    '$postcode',
-    '$email',
-    '$phone',
-    '$skills',
-    '$otherskills',
-    '$resumeName')";
+    // Prepared statement (prevents SQL injection)
+    $stmt = mysqli_prepare($conn, "INSERT INTO eoi
+        (jobref, fname, lname, dob, gender, address, state, postcode, email, phone, skills, otherskills, resume)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-    if (mysqli_query($conn, $sql)) {
+    mysqli_stmt_bind_param(
+        $stmt,
+        "sssssssssssss",
+        $jobref, $fname, $lname, $dob, $gender, $address,
+        $state, $postcode, $email, $phone, $skills, $otherskills, $resumeName
+    );
+
+    if (mysqli_stmt_execute($stmt)) {
         $eoiNumber = mysqli_insert_id($conn);
     } else {
-        $dbError = mysqli_error($conn);
+        $dbError = mysqli_stmt_error($stmt);
     }
+
+    mysqli_stmt_close($stmt);
 }
 
 mysqli_close($conn);
