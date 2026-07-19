@@ -39,6 +39,9 @@
             die("Connection failed: " . mysqli_connect_error());
         }
 
+        // TEMPORARY LINE: Delete this line after you refresh the page successfully!
+        mysqli_query($conn, "DROP TABLE IF EXISTS jobs;");
+
         // 1. Automatically create the 'jobs' table if it doesn't exist
         $create_table_sql = "CREATE TABLE IF NOT EXISTS jobs (
             id INT AUTO_INCREMENT PRIMARY KEY,
@@ -61,17 +64,17 @@
 
         if ($row_count == 0) {
             $seed_sql = "INSERT INTO jobs (reference_code, title, salary_min, salary_max, reporting_to, position_description, key_responsibilities, essential_requirements, preferable_requirements) VALUES
-            ('DL101', 'Senior Learning Designer', 85000, 110000, 'Head of Digital Learning', 
-             'Lead the design and development of innovative digital courseware across undergraduate and postgraduate units.', 
-             'Collaborate with academic staff to design courses|Develop engaging online learning materials|Evaluate learning tool effectiveness', 
-             'Degree in Education or related field|3+ years experience in instructional design|Proficiency with LMS platforms like Canvas or Moodle', 
-             'Master degree in Educational Technology|Experience with H5P and SCORM compliance'),
-            
-            ('DL102', 'Educational Technologist', 70000, 90000, 'Senior Learning Designer', 
-             'Provide technical support and training for learning technologies across campus.', 
-             'Train faculty on digital teaching tools|Troubleshoot learning platform issues|Develop user guides and video tutorials', 
-             'Bachelor degree in IT or related discipline|Strong communication skills|Experience supporting LMS systems', 
-             'Knowledge of HTML/CSS/JavaScript|Experience in a higher education environment')";
+            ('DLR01', 'Digital Learning Officer', 75000, 90000, 'Director of Digital Learning', 
+             'Develop online learning materials and support staff in using educational technology.', 
+             'Create digital learning resources.|Support academic staff.|Manage learning platforms.|Provide training workshops.', 
+             'Bachelor\'s Degree.|Strong communication skills.|Experience with Learning Management Systems.', 
+             'Knowledge of HTML and CSS.|Project management experience.'),
+             
+            ('WEB02', 'Web Content Coordinator', 70000, 85000, 'Web Services Manager', 
+             'Maintain university websites and improve online user experience.', 
+             'Update website content.|Monitor accessibility.|Maintain web standards.|Support marketing campaigns.', 
+             'Degree in IT or Multimedia.|HTML and CSS knowledge.|Teamwork skills.', 
+             'JavaScript experience.|CMS experience.')";
 
             mysqli_query($conn, $seed_sql);
         }
