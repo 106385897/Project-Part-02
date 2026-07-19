@@ -1,20 +1,8 @@
 <?php
 require_once("settings.php");
 
-// Block direct access: require POST method AND the required fields to be present
-$requiredFields = ['jobref', 'fname', 'lname', 'dob', 'gender', 'address', 'state', 'postcode', 'email', 'phone'];
-$isValidPost = ($_SERVER["REQUEST_METHOD"] == "POST");
-
-if ($isValidPost) {
-    foreach ($requiredFields as $field) {
-        if (!isset($_POST[$field]) || trim($_POST[$field]) === "") {
-            $isValidPost = false;
-            break;
-        }
-    }
-}
-
-if (!$isValidPost) {
+// Block direct access (e.g. someone typing the URL directly, or a GET request)
+if ($_SERVER["REQUEST_METHOD"] != "POST") {
     header("Location: apply.php");
     exit();
 }
