@@ -585,6 +585,30 @@ footer {
 }
 
 
+/* Main content image: scales down to fit its container, never overflows the page */
+.main-image-container {
+    max-width: 100%;
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.main-image {
+    width: 100%;
+    max-width: 600px;   /* adjust this number to make it bigger/smaller */
+    height: auto;        /* keeps the image's proportions correct, no stretching */
+    display: block;
+    margin: 0 auto;       /* centers the image */
+    border-radius: 8px;   /* optional: soft rounded corners */
+}
+
+.main-image-container figcaption {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+
 /*Nahan-Apply Page*/
 .logo {
     width: 180px;

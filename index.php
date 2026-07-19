@@ -9,24 +9,27 @@
     <link rel="stylesheet" href="styles/styles.css">
     
     <style>
-       .highlight-text {
-    background-color: #b58e42; 
-    color: #000000; 
-    padding: 2px 5px;
-    font-weight: bold;
-    border-radius: 3px;
-}
+        /* Inline highlight used to draw attention to the key phrase in the "Who We Are" section */
+        .highlight-text {
+            background-color: #b58e42; 
+            color: #000000; 
+            padding: 2px 5px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
     </style>
 </head>
 <body>
 
-
+    <!-- Shared site header (logo, title bar, etc.) -->
     <?php require_once("header.inc"); ?>
 
+    <!-- Shared site navigation menu -->
     <?php require_once("nav.inc"); ?>
 
-
     <main>
+
+        <!-- Hero banner: first thing visitors see, sets the tone for the department -->
         <section id="hero-section" class="hero">
             <div class="hero-content">
                 <h3>Join the Forefront of Digital Education</h3>
@@ -34,18 +37,28 @@
             </div>
         </section>
 
+        <!-- Introductory section: who the department is and a call-to-action for recruitment -->
         <section class="content-section">
             <h3>Who We Are</h3>
             <p>Our department supports academic staff and students by developing engaging digital learning environments, conducting pioneering research in educational technology, and fostering a culture of continuous digital capacity building.</p>
             <p>We are currently seeking passionate professionals to join our team. If you have a <span class="highlight-text">drive for educational technology</span> and want to make a lasting impact on university education, we want to hear from you!</p>
             
-            <figure class="main-image-container">
-                
-            </figure>
+            <!-- 
+                Relevant image showing the department's actual service/focus 
+                (students/staff using digital learning tech, VR/AR lab, etc.)
+                Replace src with your own photo — free options: unsplash.com, pexels.com
+            -->
+ <figure class="main-image-container">
+    <img src="images/studentvr.png" 
+         alt="Student using a VR headset in an educational setting" 
+         class="main-image">
+    <figcaption>Students trial VR-based learning tools in the Digital Learning Lab.</figcaption>
+</figure> 
         </section>
 
         <hr class="section-divider">
 
+        <!-- Core focus areas: three-card grid summarising the department's main research/service pillars -->
         <section class="content-section">
             <h3>Our Core Focus Areas</h3>
             <div class="focus-grid">
@@ -66,6 +79,7 @@
 
         <hr class="section-divider">
 
+        <!-- Recruitment benefits + staff testimonial, side-by-side layout -->
         <section class="content-section split-section">
             <div class="benefits">
                 <h3>Why Join Lumina?</h3>
@@ -82,16 +96,15 @@
                 <h3>Staff Spotlight</h3>
                 <blockquote>
                     <p>"Working at Lumina has allowed me to push the boundaries of what is possible in digital education. The supportive environment and focus on real-world impact make it an incredible place to build a career."</p>
-                    <cite>&mdash; Dr. Sarah Jenkins, Lead Learning Designer</cite>
+                    &mdash; Dr. Sarah Jenkins, Lead Learning Designer
                 </blockquote>
             </div>
         </section>
+
     </main>
 
-
-<?php require_once("footer.inc"); ?>
-
-
+    <!-- Shared site footer (should contain author info, acknowledgements, and project links) -->
+    <?php require_once("footer.inc"); ?>
 
 </body>
 </html>
