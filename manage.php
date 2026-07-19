@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Pragma: no-cache");
+
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header("Location: login.php");
     exit;
@@ -13,7 +16,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$message = "";
+$message = isset($_GET['msg']) ? $_GET['msg'] : "";
 
 if (isset($_GET['logout'])) {
     session_destroy();
@@ -31,6 +34,8 @@ if (isset($_POST['delete_jobref']) && !empty($_POST['jobref_to_delete'])) {
     $stmt->execute();
     $message = "Deleted " . $stmt->affected_rows . " EOI(s) for Job Reference: " . htmlspecialchars($jobref_del);
     $stmt->close();
+    header("Location: manage.php?msg=" . urlencode($message));
+    exit;
 }
 
 if (isset($_POST['update_status'])) {
@@ -50,6 +55,8 @@ if (isset($_POST['update_status'])) {
     $stmt->execute();
     $message = "Updated status for EOI Number: " . htmlspecialchars($eoi_id);
     $stmt->close();
+    header("Location: manage.php?msg=" . urlencode($message));
+    exit;
 }
 
 $allowed_sorts = ['EOInumber', 'jobref', 'fname', 'lname', 'status'];
