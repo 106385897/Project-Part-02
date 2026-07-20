@@ -23,6 +23,7 @@ $table = "CREATE TABLE IF NOT EXISTS eoi (
     dob DATE NOT NULL,
     gender VARCHAR(10) NOT NULL,
     address VARCHAR(40) NOT NULL,
+    suburb VARCHAR(40) NOT NULL,
     state VARCHAR(5) NOT NULL,
     postcode CHAR(4) NOT NULL,
     email VARCHAR(100) NOT NULL,
@@ -48,6 +49,7 @@ $lname = sanitise($_POST['lname'] ?? '');
 $dob = sanitise($_POST['dob'] ?? '');
 $gender = sanitise($_POST['gender'] ?? '');
 $address = sanitise($_POST['address'] ?? '');
+$suburb = sanitise($_POST['suburb'] ?? '');
 $state = sanitise($_POST['state'] ?? '');
 $postcode = sanitise($_POST['postcode'] ?? '');
 $email = sanitise($_POST['email'] ?? '');
@@ -79,6 +81,9 @@ if ($gender == "")
 
 if ($address == "")
     $errors[] = "Please enter your address.";
+
+if ($suburb == "")
+    $errors[] = "Please enter your suburb.";
 
 if ($state == "")
     $errors[] = "Please select your state.";
@@ -133,13 +138,13 @@ if (empty($errors)) {
 
     // Prepared statement (prevents SQL injection)
     $stmt = mysqli_prepare($conn, "INSERT INTO eoi
-        (jobref, fname, lname, dob, gender, address, state, postcode, email, phone, skills, otherskills, resume)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        (jobref, fname, lname, dob, gender, address, suburb, state, postcode, email, phone, skills, otherskills, resume)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
     mysqli_stmt_bind_param(
         $stmt,
-        "sssssssssssss",
-        $jobref, $fname, $lname, $dob, $gender, $address,
+        "ssssssssssssss",
+        $jobref, $fname, $lname, $dob, $gender, $address, $suburb,
         $state, $postcode, $email, $phone, $skills, $otherskills, $resumeName
     );
 
