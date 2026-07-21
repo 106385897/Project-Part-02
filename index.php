@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles/styles.css">
     
     <style>
-        /* Inline highlight used to draw attention to the key phrase in the "Who We Are" section */
+        // inline CSS for highlighting key 
         .highlight-text {
             background-color: #b58e42; 
             color: #000000; 
@@ -21,7 +21,7 @@
 </head>
 <body>
 
-    <!-- Shared site header (logo, title bar, etc.) -->
+    // Shared site header 
     <?php require_once("header.inc"); ?>
 
     <!-- Shared site navigation menu -->
@@ -29,7 +29,7 @@
 
     <main>
 
-        <!-- Hero banner: first thing visitors see, sets the tone for the department -->
+        // Hero section with welcome message and department overview
         <section id="hero-section" class="hero">
             <div class="hero-content">
                 <h3>Join the Forefront of Digital Education</h3>
@@ -37,17 +37,13 @@
             </div>
         </section>
 
-        <!-- Introductory section: who the department is and a call-to-action for recruitment -->
+        // Section highlighting the department's mission and vision
         <section class="content-section">
             <h3>Who We Are</h3>
             <p>Our department supports academic staff and students by developing engaging digital learning environments, conducting pioneering research in educational technology, and fostering a culture of continuous digital capacity building.</p>
             <p>We are currently seeking passionate professionals to join our team. If you have a <span class="highlight-text">drive for educational technology</span> and want to make a lasting impact on university education, we want to hear from you!</p>
             
-            <!-- 
-                Relevant image showing the department's actual service/focus 
-                (students/staff using digital learning tech, VR/AR lab, etc.)
-                Replace src with your own photo — free options: unsplash.com, pexels.com
-            -->
+            // Call-to-action button linking to the application form
  <figure class="main-image-container">
     <img src="images/studentvr.png" 
          alt="Student using a VR headset in an educational setting" 
@@ -58,7 +54,7 @@
 
         <hr class="section-divider">
 
-        <!-- Core focus areas: three-card grid summarising the department's main research/service pillars -->
+        // Core focus areas: three-card grid summarising the department's main research/service pillars
         <section class="content-section">
             <h3>Our Core Focus Areas</h3>
             <div class="focus-grid">
@@ -79,7 +75,7 @@
 
         <hr class="section-divider">
 
-        <!-- Recruitment benefits + staff testimonial, side-by-side layout -->
+        // Recruitment benefits + staff testimonial, side-by-side layout
         <section class="content-section split-section">
             <div class="benefits">
                 <h3>Why Join Lumina?</h3>
@@ -103,7 +99,7 @@
 
     </main>
 
-    <!-- Shared site footer (should contain author info, acknowledgements, and project links) -->
+    
     <?php require_once("footer.inc"); ?>
 
 </body>

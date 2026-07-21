@@ -33,7 +33,7 @@
 
             <div class="form-grid">
 
-                <!-- Which job the applicant is applying for -->
+                //Job Application Form
                 <p class="form-section-title">Position</p>
 
                 <div class="full-width">
@@ -46,7 +46,7 @@
                     <span class="hint" id="jobref-hint">Choose the position you're applying for.</span>
                 </div>
 
-                <!-- Basic personal details -->
+                
                 <p class="form-section-title">Personal Details</p>
 
                 <div>
@@ -86,7 +86,7 @@
                     >
                 </div>
 
-                <!-- Gender: only two options given, could add more later -->
+                //Gender radio buttons
                 <div class="full-width">
                     <fieldset>
                         <legend>Gender</legend>
@@ -103,7 +103,7 @@
                     </fieldset>
                 </div>
 
-                <!-- Contact info and full address, including the new suburb field -->
+                //Contact and Address fields
                 <p class="form-section-title">Contact &amp; Address</p>
 
                 <!-- Street address -->
@@ -119,7 +119,7 @@
                     >
                 </div>
 
-                <!-- Suburb: was missing before, added so the address is actually complete -->
+                // Suburb, State, Postcode, Email, Phone
                 <div>
                     <label for="suburb" class="required">Suburb</label>
                     <input
@@ -132,7 +132,7 @@
                     >
                 </div>
 
-                <!-- State: full list now, was missing ACT and NT before -->
+               // State dropdown
                 <div>
                     <label for="state" class="required">State</label>
 
@@ -154,7 +154,7 @@
                     </select>
                 </div>
 
-                <!-- Postcode must be exactly 4 digits -->
+               // Postcode input with validation
                 <div>
                     <label for="postcode" class="required">Postcode</label>
                     <input
@@ -182,7 +182,7 @@
                     >
                 </div>
 
-                <!-- Phone must be 8-12 digits, no spaces or dashes -->
+                // Phone number input with validation
                 <div>
                     <label for="phone" class="required">Phone Number</label>
                     <input
@@ -198,7 +198,7 @@
                     <span class="hint" id="phone-hint">8 to 12 digits, no spaces or dashes.</span>
                 </div>
 
-                <!-- Skills checklist, plus optional free text and resume upload -->
+                // Skills checklist, plus optional free text and resume upload
                 <p class="form-section-title">Skills &amp; Experience</p>
 
                 <div class="full-width">
@@ -227,7 +227,7 @@
                     </span>
                 </div>
 
-                <!-- Resume is optional, checked server-side for type and size -->
+                // Resume / CV upload
                 <div class="full-width">
                     <label for="resume">Resume / CV</label>
 
@@ -246,7 +246,7 @@
                     </span>
                 </div>
 
-                <!-- Must tick this to submit -->
+                // Must tick this to submit
                 <div class="full-width declaration">
                     <input
                         type="checkbox"

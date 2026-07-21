@@ -39,10 +39,9 @@
             die("Connection failed: " . mysqli_connect_error());
         }
 
-        // TEMPORARY LINE: Delete this line after you refresh the page successfully!
         mysqli_query($conn, "DROP TABLE IF EXISTS jobs;");
 
-        // 1. Automatically create the 'jobs' table if it doesn't exist
+        // Automatically create the 'jobs' table if it doesn't exist
         $create_table_sql = "CREATE TABLE IF NOT EXISTS jobs (
             id INT AUTO_INCREMENT PRIMARY KEY,
             reference_code VARCHAR(10) NOT NULL UNIQUE,
@@ -58,7 +57,7 @@
 
         mysqli_query($conn, $create_table_sql);
 
-        // 2. Seed the table with default data if it is empty
+        // Seed the table with default data if it is empty
         $check_rows = mysqli_query($conn, "SELECT COUNT(*) AS total FROM jobs");
         $row_count = mysqli_fetch_assoc($check_rows)['total'];
 
@@ -79,7 +78,7 @@
             mysqli_query($conn, $seed_sql);
         }
 
-        // 3. Fetch and render all jobs
+        // Fetch and render all jobs
         $result = mysqli_query($conn, "SELECT * FROM jobs ORDER BY id ASC");
 
         if ($result && mysqli_num_rows($result) > 0):

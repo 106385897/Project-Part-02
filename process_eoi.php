@@ -1,7 +1,7 @@
 <?php
 require_once("settings.php");
 
-// Block direct access (e.g. someone typing the URL directly, or a GET request)
+// Block direct access 
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
     header("Location: apply.php");
     exit();
