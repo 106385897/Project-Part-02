@@ -73,7 +73,7 @@ mysqli_close($conn);
 
     <?php require_once("nav.inc"); ?>
 
-    // Main content section for About Us page
+    <!-- Main content section for About Us page -->
     <main class="content-section">
         <h2>About Lumina University & Our Team</h2>
         
@@ -102,7 +102,7 @@ mysqli_close($conn);
 
         <hr class="section-divider">
 
-        // Section highlighting the developers and their contributions
+        <!-- Section highlighting the developers and their contributions -->
         <section>
             <h3>Our Developers & Campus Contributions</h3>
             <dl>
@@ -121,7 +121,7 @@ mysqli_close($conn);
         </section>
 
         <hr class="section-divider">
-          // Section for dynamic contributions table loaded from the database
+          <!-- Section for dynamic contributions table loaded from the database -->
         <section>
             <h3>Project Contributions</h3>
             <p style="margin-bottom: 15px; color: #555;">Loaded live from the database — a breakdown of what each member completed across Project 1 and Project 2.</p>
@@ -147,7 +147,7 @@ mysqli_close($conn);
         </section>
 
         <hr class="section-divider">
-        // Section with team photo and caption
+        <!-- Section with team photo and caption -->
         <section>
             <h3>The Lumina Lab Creators</h3>
             <figure style="text-align: center; margin: 20px 0;">
