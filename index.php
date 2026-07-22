@@ -1,3 +1,5 @@
+<!-- I, Khaled acknowledge that i have used Ai for lines 60 - 76 -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +11,7 @@
     <link rel="stylesheet" href="styles/styles.css">
     
     <style>
-        <!-- inline CSS for highlighting key -->
+        // inline CSS for highlighting key -->
         .highlight-text {
             background-color: #b58e42; 
             color: #000000; 
