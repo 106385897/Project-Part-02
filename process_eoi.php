@@ -1,3 +1,4 @@
+<!-- Used AI in some parts to ensure the validations -->
 <?php
 require_once("settings.php");
 
